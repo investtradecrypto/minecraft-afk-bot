@@ -40,6 +40,23 @@ In whispers:
 
 ---
 
+### 🧑‍💻 Author
+
+Built with ❤️ by **Sunil Kumar**
+
+- 🌐 Website: [sunilgaming.pages.dev](https://sunilgaming.pages.dev)  
+- 💬 Discord Server: [discord.gg/pc3hazBxBB](https://discord.gg/pc3hazBxBB)  
+- 🧑‍💻 Discord: `sunilgaming_op`  
+- 📧 Email: hustlewithsunil@gmail.com  
+- 📷 YouTube: [@sunilgaming_op](https://youtube.com/@sunilgaming_op)
+
+---
+
+### 📜 License
+
+This project is open-source and free to use, modify, and share.  
+Give a ⭐ if you find it useful!
+
 ### 🔧 Setup Instructions
 
 1. **Clone the Repository**
@@ -58,19 +75,3 @@ port: your-port-here,
 4.Run the bot
 node index.js
 
-### 🧑‍💻 Author
-
-Built with ❤️ by **Sunil Kumar**
-
-- 🌐 Website: [sunilgaming.pages.dev](https://sunilgaming.pages.dev)  
-- 💬 Discord Server: [discord.gg/pc3hazBxBB](https://discord.gg/pc3hazBxBB)  
-- 🧑‍💻 Discord: `sunilgaming_op`  
-- 📧 Email: hustlewithsunil@gmail.com  
-- 📷 YouTube: [@sunilgaming_op](https://youtube.com/@sunilgaming_op)
-
----
-
-### 📜 License
-
-This project is open-source and free to use, modify, and share.  
-Give a ⭐ if you find it useful!
