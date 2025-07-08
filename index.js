@@ -4,9 +4,9 @@ let bot;
 
 function createBot() {
   bot = mineflayer.createBot({
-    host: '94.136.190.76',
-    port: 25089,
-    username: 'aurora_assistant',
+    host: 'your-server-ip', //your server ip
+    port: your-server-port, //your server port
+    username: 'aurora_assistant', // change name according to you
     version: '1.21.4'
   });
 
