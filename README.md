@@ -46,7 +46,7 @@ Built with ❤️ by **Sunil Kumar**
 
 - 🌐 Website: [sunilgaming.pages.dev](https://sunilgaming.pages.dev)  
 - 💬 Discord Server: [discord.gg/pc3hazBxBB](https://discord.gg/pc3hazBxBB)  
-- 🧑‍💻 Discord: `sunilgaming_op`  
+- 🧑‍💻 Discord: `realsunil`  
 - 📧 Email: hustlewithsunil@gmail.com  
 - 📷 YouTube: [@sunilgaming_op](https://youtube.com/@sunilgaming_op)
 
