@@ -4,13 +4,12 @@ let bot;
 
 function createBot() {
   bot = mineflayer.createBot({
-    host: 'your-server-ip', //your server ip
-    port: your-server-port, //your server port
-    username: 'aurora_assistant', // change name according to you
+    host: 'your-server-ip',
+    port: 25565, // ✅ Replace with actual port number
+    username: 'aurora_assistant',
     version: '1.21.4'
   });
 
-  // AuthMe / Login/Register & Teleport Request Handling
   bot.on('message', (message) => {
     const msg = message.toString().toLowerCase();
 
@@ -21,56 +20,47 @@ function createBot() {
     }
 
     if (
-      msg.includes('has requested to teleport to you') ||
-      msg.includes('wants to teleport to you') ||
-      msg.includes('sent you a teleport request') ||
-      msg.includes('has requested that you teleport to them') ||
-      msg.includes('wants you to teleport to them')
+      msg.includes('teleport to you') ||
+      msg.includes('teleport to them')
     ) {
       console.log('Teleport request detected! Accepting...');
       bot.chat('/tpaccept');
     }
   });
 
-  // Public Chat Handler
   bot.on('chat', (username, message) => {
     if (username === bot.username) return;
-
-    console.log(`[Public] <${username}>: ${message}`);
-
     const lower = message.toLowerCase();
 
     if (lower.startsWith('!')) {
       const args = lower.slice(1).split(' ');
       const command = args.shift();
 
-      if (command === 'help') {
-        bot.chat(`Hi ${username}, I can respond to "hello", "how are you", or commands like !help, !ping, and !sunilgaming.`);
-      } else if (command === 'sunilgaming') {
-        bot.chat(`Hey ${username}, sunilgaming created me! He is my owner.`);
-      } else if (command === 'ping') {
-        bot.chat(`Pong, ${username}!`);
-      } else {
-        bot.chat(`Sorry ${username}, unknown command.`);
+      switch (command) {
+        case 'help':
+          bot.chat(`Hi ${username}, I respond to hello, how are you, and commands like !help, !ping.`);
+          break;
+        case 'sunilgaming':
+          bot.chat(`Hey ${username}, sunilgaming created me!`);
+          break;
+        case 'ping':
+          bot.chat(`Pong, ${username}!`);
+          break;
+        default:
+          bot.chat(`Unknown command: ${command}`);
       }
     } else {
-      if (lower.includes('hello')) {
-        bot.chat(`Hi ${username}!`);
-      } else if (lower.includes('how are you')) {
-        bot.chat(`I'm just a bot, but thanks for asking, ${username}!`);
-      }
+      if (lower.includes('hello')) bot.chat(`Hi ${username}!`);
+      else if (lower.includes('how are you')) bot.chat(`I'm just a bot, but thanks for asking!`);
     }
   });
 
-  // Whisper Handler
   bot.on('whisper', (username, message) => {
     if (username === bot.username) return;
-
     console.log(`[Whisper] <${username}>: ${message}`);
     bot.whisper(username, `Hello ${username}, I got your message!`);
   });
 
-  // Simulated AFK Movement
   function randomMovement() {
     const directions = ['forward', 'back', 'left', 'right'];
     const dir = directions[Math.floor(Math.random() * directions.length)];
@@ -83,11 +73,12 @@ function createBot() {
   }
 
   bot.once('spawn', () => {
-    bot.chat('AFK bot online!');
-    randomMovement();
+    setTimeout(() => {
+      bot.chat('AFK bot online!');
+      randomMovement();
+    }, 1000);
   });
 
-  // Reconnect Logic
   bot.on('end', () => {
     console.log('Bot disconnected. Reconnecting in 5 seconds...');
     setTimeout(createBot, 5000);
